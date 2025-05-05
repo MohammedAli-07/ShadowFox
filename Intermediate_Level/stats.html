@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mumbai Indians - IPL Advanced Stats</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .back-button {
+      display: inline-block;
+      background-color: rgb(220, 168, 14);
+      color: rgb(0, 75, 141);
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-top: 2rem;
+    }
+
+    .back-button:hover {
+      background-color: white;
+      transform: scale(1.05);
+    }
+
+    .back-container {
+      text-align: center;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: rgb(0, 75, 141);
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    h1{
+        color: rgb(220,168,14);
+    }
+    .charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .chart-container {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      .charts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mumbai Indians - IPL Advanced Stats (All Seasons)</h1>
+  <div class="charts">
+    <div class="chart-container">
+      <h2>Total Wins by Season</h2>
+      <canvas id="winsChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Top Scorers (All-Time)</h2>
+      <canvas id="allTimeRunsChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Top Wicket Takers (All-Time)</h2>
+      <canvas id="allTimeWicketsChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Trophies Won Over the Years</h2>
+      <canvas id="trophiesChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Longest Six by Player</h2>
+      <canvas id="longestSixChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>Perfect Deliveries (Bowled Outs)</h2>
+      <canvas id="perfectDeliveriesChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const winsChart = new Chart(document.getElementById('winsChart'), {
+      type: 'line',
+      data: {
+        labels: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+        datasets: [{
+          label: 'Wins',
+          data: [7, 5, 11, 10, 10, 13, 7, 11, 7, 12, 6, 9, 9, 7, 4, 8, 7],
+          borderColor: 'rgba(0, 75, 141, 1)',
+          backgroundColor: 'rgba(0, 75, 141, 0.2)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: { responsive: true }
+    });
+
+    const allTimeRunsChart = new Chart(document.getElementById('allTimeRunsChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Rohit Sharma', 'Suryakumar Yadav', 'Kieron Pollard', 'Sachin Tendulkar', 'Quinton de Kock'],
+        datasets: [{
+          label: 'Runs',
+          data: [5217, 2793, 2475, 2334, 1329],
+          backgroundColor: 'rgba(0, 75, 141, 0.8)'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    const allTimeWicketsChart = new Chart(document.getElementById('allTimeWicketsChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Lasith Malinga', 'Jasprit Bumrah', 'Harbhajan Singh', 'Mitchell McClenaghan', 'Hardik Pandya'],
+        datasets: [{
+          label: 'Wickets',
+          data: [170, 145, 127, 71, 51],
+          backgroundColor: 'rgba(0, 166, 93, 0.8)'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    const trophiesChart = new Chart(document.getElementById('trophiesChart'), {
+      type: 'bar',
+      data: {
+        labels: ['2013', '2015', '2017', '2019', '2020'],
+        datasets: [{
+          label: 'Trophies Won',
+          data: [1, 1, 1, 1, 1],
+          backgroundColor: 'rgba(249, 142, 43, 0.8)'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    const longestSixChart = new Chart(document.getElementById('longestSixChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Kieron Pollard', 'Rohit Sharma', 'Tim David', 'Hardik Pandya', 'Ishan Kishan'],
+        datasets: [{
+          label: 'Distance (in meters)',
+          data: [109, 105, 103, 101, 100],
+          backgroundColor: 'rgba(225, 38, 28, 0.8)'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    const perfectDeliveriesChart = new Chart(document.getElementById('perfectDeliveriesChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Jasprit Bumrah', 'Lasith Malinga', 'Harbhajan Singh', 'Mitchell Johnson', 'Trent Boult'],
+        datasets: [{
+          label: 'Bowled Outs',
+          data: [37, 42, 31, 19, 15],
+          backgroundColor: 'rgba(0, 75, 141, 0.6)'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+      }
+    });
+  </script>
+    <div class="back-container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+      </div>
+    </div>
+</body>
+</html>
