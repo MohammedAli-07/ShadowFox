@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mohammed Ali Mulla</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href ="style1.css"/>
+    <link rel="stylesheet" href="mediaqueries.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*General*/
+* {
+margin: 0;
+padding: 0;
+
+}
+
+body {
+    font-family:"Poppins","sans-serif";
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Adjust based on your navbar height */
+}
+
+p{
+    color: rgb(85,85,85)
+}
+ 
+/* Transitions */
+a,
+.btn{
+    transition: all 300ms ease;
+}
+/* Desktop nav */
+nav,
+.nav-links {
+    display: flex;
+}
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a{
+    color:black;
+    text-decoration:none;
+    text-decoration-color: white;
+}
+
+a:hover{
+    color: grey;
+    text-decoration:underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(181,181,181);
+}
+
+.logo{
+    font-size: 2rem;
+}
+
+.logo:hover{
+    cursor: default;
+}
+
+/*Hamburger Menu */
+
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu{
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span{
+    width: 100%;
+    height:2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li{
+    list-style: none;
+}
+
+.menu-links.open{
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+.hamburger-icon span:first-child {
+    opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+/* Sections */
+
+section{
+    padding-top: 4vh ;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container{
+    display: flex;
+}
+
+/* Profile section */
+
+#profile{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+}
+
+.section__pic-container{
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+}
+
+.section__text p{
+    font-weight: 600;
+}
+
+.section__text__p1{
+    text-align: center;
+}
+
+.section__text__p2{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+.section__text__p3{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.title{
+    font-size: 3rem;
+    text-align: center;
+}
+
+#socials-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.icon{
+    cursor: pointer;
+    height: 2rem;
+    font-size: 2rem;
+    
+}
+
+/* Button */
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn{
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-1, 
+.btn-color-2{
+    border:rgb(53 ,53,53) 0.1rem solid;
+}
+
+.btn-color-1:hover, 
+.btn-color-2:hover{
+    cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover{
+    background:rgb(53 ,53,53);
+    color: white;
+}
+
+.btn-color-1:hover{
+    background: rgb(0,0,0);
+}
+
+.btn-color-2{
+    background: none;
+}
+
+.btn-color-2:hover{
+    border: rgb(255,255,255) 0.1rem solid;
+}
+
+.btn-container{
+    gap: 1rem;
+}
+
+/* ABOUT section */
+
+#about{
+    position: relative;
+}
+
+.about-containers{
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-details-container{
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-containers,
+.about-details-container{
+    display: flex;
+}
+
+.about-pic{
+    border-radius: 2rem;
+    position: relative;
+    /* top: -80px; */
+}
+
+.arrow{
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.details-container{
+    padding: 1.5rem;
+    flex: 1;
+    background:white;
+    border-radius: 2rem;
+    border-color: rgb(163,163,163);
+    border: rgb(53,53,53) 0.1rem solid;
+    text-align: center;
+}
+
+.section-container{
+    gap: 4rem;
+    height: 80%;
+    
+}
+
+.section__pic-container{
+    height: 400px;
+    width:400px;
+    margin: auto 0;
+}
+
+/* Experience Section */
+
+#experience{
+    position: relative;
+}
+
+.experience-sub-title{
+    color: rgb(85,85,85);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.experience-details-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+ .article-container{
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-around;
+}
+
+article{
+    display: flex;
+    width: 10rem ;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+article .icon{
+    cursor: default;
+   
+} 
+/* Project section  */
+
+#projects{
+    position: relative;
+}
+
+.color-container{
+    border-color: rgb(163,163,163);
+    background: rgb(250,250,250);
+}
+
+.project-img{
+    border-radius: 2rem;
+    width: 90%;
+    height: 90%;
+}
+
+.project-title{
+    margin: 1rem;
+    color: black;
+}
+
+.project-btn{
+    color: black;
+    border-color: rgb;
+}
+
+/*contact section  */
+
+#contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.contact-info-upper-container{
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: rgb(53,53,53) 0.1rem solid;
+    border-color: rgb(163,163,163);
+    background:rgb(250,250,250);
+    margin: 2rem auto;
+    padding: 0.5rem;
+}
+
+.contact-info-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-info-conatainer p{
+    font-size: larger;
+}
+
+.contact-icon{
+    cursor: default;
+  
+}
+
+.img-size{
+    height: 2.9rem ;
+    width: auto;
+}
+
+/* Footer section */
+
+footer{
+    height: 26vh;
+    margin: 0 1rem;
+}
+
+footer p{
+    text-align: center;
+}
+
+
+/* Contact section */
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+    
+    
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    backdrop-filter: blur(10px);
+    background: rgba(250, 250, 250);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 2rem;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    border: rgb(53,53,53) 0.1rem solid;
+    border-color: rgb(163,163,163);
+    justify-content: center;
+    margin-bottom: 10rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 0.8rem;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* My UI *//* My UI */ /* My UI *//* My UI */ /* My UI */ /* My UI */   /* My UI */
+/* Navbar Styles */
+
+
+#desktop-nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    backdrop-filter: blur(10px);          /* Blur for frosted glass */
+    -webkit-backdrop-filter: blur(10px);  /* Safari support */
+    border-radius: 20px;                  /* Rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px 30px;                   /* Inner spacing */
+    margin-top: 10px;                     /* Space from top */
+    height: 80px;                         /* Set navbar height */
+}
+
+/* Adjust sections to have space below the navbar */
+body {
+    padding-top: 90px; /* Add space equal to navbar height */
+}
+
+/* Sections - Ensure they start below the navbar */
+/* #home, #about, #experience, #projects, #contact {
+    padding: 120px; /* Adjust this value according to your navbar height */
+/* } */ */
+
+
+nav,
+.nav-links {
+    display: flex;
+}
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.logo:hover {
+    cursor: default;
+}
+
+#about {
+    margin: 20px;  /* Adds 20px margin on all sides (top, right, bottom, left) */
+}
+
+/* contact form button css */
+.send-btn {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 25px/50px;
+    background-color: blue;
+    font-size: 1.5rem;
+    position: relative;
+    transition: all 350ms ease-in-out;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .send-btn.checked {
+    box-shadow: 200px 0 0 black inset, 0 2px 5px gray;
+    color: white;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .plane-icon {
+    position: absolute;
+    left: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(-25deg);
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), 
+                 -1px -1px 2px rgba(0, 0, 0, 0.7), 
+                 1px -1px 2px rgba(0, 0, 0, 0.7), 
+                 -1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+  
+  .rotateCircle {
+    animation: rotate 3s ease-in-out;
+  }
+  
+  .hide {
+    display: none;
+    visibility: hidden;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    #profile{
+        height: 83vh;
+        margin-bottom: 6rem;
+    }
+    .about-conatiners {
+       flex-wrap: flex;
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    #desktop-nav{
+        display: none;
+
+    }
+    #hamburger-nav{
+        display: flex;
+    }
+
+    #experience, 
+    .experience-details-container{
+        margin-top: 2rem;
+    }
+
+    #profile,
+    .section-container{
+        display: block;
+    }
+
+    .arrow{
+        display: none;
+    }
+
+    section,
+    .section-container{
+        height: fit-content;
+    }
+
+    section{
+       margin: 0 5%;
+    }
+
+    .section__pic-container{
+        width: 275px;
+        height: 275px;
+        margin: 0 auto 2rem;
+    }
+
+    .about-containers{
+        margin-top: 0;
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+    #contact,
+    footer{
+        height: 40vh;
+    }
+
+    #profile{
+        height:83vh;
+        margin-bottom: 0;
+    }
+
+    article{
+        font-size: 1rem;
+
+    }
+
+    footer nav{
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+
+    .about-containers,
+    .contact-info-upper-container,
+    .btn-container{
+        flex-wrap: wrap;
+    }
+
+    .contact-info-container{
+        margin: 0;
+    }
+
+    .contact-info-conatainer p,
+    .nav-links li a{
+        font-size: 1rem;
+    }
+
+    .experience-sub-title{
+        font-size: 1.25rem;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .section__pic-container{
+        width: auto;
+        height: 46vw;
+        justify-content: center;
+    }
+
+    .section__text__p2{
+        font-size: 1.25rem;
+    }
+
+    .title{
+        font-size: 2rem;
+    }
+
+    .text-container{
+        text-align:justify;
+    }
+}
+/*My changes*/
+/* Default padding for sections */
+#home, #about, #experience, #projects {
+    padding-top: 120px; /* Large padding for larger screens */
+}
+#contact{
+    padding-top: 300px;
+    
+}
+
+/* Adjust padding for tablets (width less than 1400px) */
+@media screen and (max-width: 1400px) {
+    #home, #about, #experience, #projects, #contact {
+        padding-top: 80px; /* Adjust this value for mid-size screens */
+    }
+}
+
+/* For screens smaller than 1200px, mobile view adjustments */
+@media screen and (max-width: 1200px) {
+    #home, #about, #experience, #projects, #contact {
+        padding-top: 60px; /* Adjust for tablets and smaller screens */
+    }
+}
+
+/* For small screens (width less than 768px), reduce padding further */
+@media screen and (max-width: 768px) {
+    #home, #about, #experience, #projects, #contact {
+        padding-top: 40px; /* Reduce padding for small devices */
+    }
+
+}
+
+/* Further reduce padding for very small screens (below 480px) */
+@media screen and (max-width: 480px) {
+     #experience, #projects, #contact {
+        padding-top: 20px; /* Further reduce padding for small screens */
+    }
+    #home, #about{
+        padding-top: 10px;
+    }
+}
+
+  
+    </style>
+    </head>
+    <body>
+        <nav id="desktop-nav">
+            <div class="logo">Mohammed Ali Mulla</div>
+            <div>
+                <ul class ="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="logo">Mohammed Ali Mulla</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li><a href="#" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+            </nav>
+            
+            <section id="profile">
+                <div class="section__pic-container">
+                    <img src="my_img2.png" alt="Mohammed Ali Mulla profile picture"/>
+                </div>
+                <div class="section__text">
+                    <p class="section__text__p1">Hello,it's me</p>
+                    <h1 class="title">Mohammed Ali Mulla</h1>
+                    <p class="section__text__p3"> And I'm a  <span class="typing"></span></p>
+                    <div class="btn-container">
+                        <button
+                            class=" btn btn-color-2"
+                            onclick="window.open('resume.pdf')">Download CV
+                        </button>
+                        <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+
+                    </div>
+                
+                    <div id="socials-container">
+                        <img src="Linkdin.webp" alt="My LinkedIN profile" class="icon" onclick="location.href='https:/www.linkedin.com/in/mohammed-ali-mulla-17226734b/'">
+                        <img src="github.png" alt="My Github profile" class="icon" onclick="location.href='https:/github.com/MohammedAli-07'">
+                    </div>
+                </div>   
+                    
+            </section>
+            <section id="about">
+                <p class="section__text__p1">Get To Know More</p>
+                <h1 class="title">About Me</h1>
+                <div class="section-container">
+                    <div class="section__pic-container">
+                        <img src="my_img.jpg"alt="Profile Picture" class="about-pic"/>
+                    </div>
+                
+                <div class="about-details-containers">
+                    <div class="about-containers">
+                        <div class="details-container">
+                        <img src="experience.png"alt="Experience" class="icon"/>
+                        <h2>Project-Based Experience</h2>
+                        <p>Worked on innovative tech projects and participated in multiple hackathons.</p>
+
+                    </div>
+                    
+                <div class="details-container">
+                    <img src="education.png"alt="Education" class="icon"/>
+                    <h2>Education</h2>
+                    <p>Diploma in Computer Engineering, Vidyalankar Polytechnic<br/>Mumbai, Maharashtra</p>
+
+                </div>
+                </div>
+                <div class="text-container">
+                    I am Mohammed Ali Mulla, a passionate and dedicated Computer Engineering student with a focus onM<b>app development, frontend development, and AI/ML.</b> I believe in the power of technology to connect <b>people and improve lives</b>, and I strive to create solutions that are not only innovative but also meaningful. Whether it’s participating in hackathons or building projects, I am always eager to learn, grow, and contribute to something bigger than myself.
+
+                    <br/>Driven by curiosity and a genuine desire to make a difference, I continuously explore new technologies and techniques to stay ahead in the fast-paced world of tech. <b>My approach is not just about problem-solving; it’s about creating experiences that matter and bring people together.</b> With a strong sense of responsibility and an open mind, I aim to use my skills to build a future that’s both smarter and more compassionate.
+                </div>
+                </div>
+                </div>
+                <img src="arrow.webp" alt="Arrow" class="icon arrow" onclick="location.href='#experience'"/>
+
+            </section>
+            <section id="experience">
+                <p class="section__text__p1">Explore My</p>
+                <h1 class="title">Experience</h1>
+                <div class="experience-details-container">
+                    <div class="about-containers">
+                        <div class="details-container">
+                            <h2 class="experience-sub-title">Frontend & UI Design<br/><br/></h2>
+                            <div class="article-container">
+                                <article>
+                                    <img src="checkmark.png" alt="Experience.icon" class="icon"/>
+                                    <div>
+                                        <h3>HTML</h3>
+                                        <p>Experienced</p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="checkmark.png" alt="Experience.icon" class="icon"/>
+                                    <div>
+                                        <h3>CSS</h3>
+                                        <p>Experienced</p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="checkmark.png" alt="Experience.icon" class="icon"/>
+                                    <div>
+                                        <h3>JavaScript</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="checkmark.png" alt="Experience.icon" class="icon"/>
+                                    <div>
+                                        <h3>UI/UX</h3>
+                                        <p>Beginner</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="details-container">
+                            <h2 class="experience-sub-title">Programming & Backend Logic</h2>
+                            <div class="article-container">
+                                <article>
+                                    <img src="checkmark.png" alt="Experience.icon" class="icon"/>
+                                    <div>
+                                        <h3>Python</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="checkmark.png" alt="Experience.icon" class="icon"/>
+                                    <div>
+                                        <h3>Java</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="checkmark.png" alt="Experience.icon" class="icon"/>
+                                    <div>
+                                        <h3>C/C++ Programming</h3>
+                                        <p>Experienced</p>
+                                    </div>
+                                </article>
+
+                                <article>
+                                    <img src="checkmark.png" alt="Experience.icon" class="icon"/>
+                                    <div>
+                                        <h3>MySQL</h3>
+                                        <p>Intermediate</p>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                             
+                 <img src="arrow.webp" alt="Arrow" class="icon arrow" onclick="location.href='#projects'"/>
+
+            </section>
+            <section id="projects">
+                <p class="section__text__p1">Browse My Recent</p>
+                <h1 class="title">Projects</h1>
+                <div class="experience-details-container">
+                    <div class="about-containers">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="project.jpg" alt="Project1" class="project-img"/>
+                        </div>
+                        <h2 class="experience-sub-title project-title">Holistic Driver Safety Solution<br/><br/><br/><br/><br/></h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https:/www.linkedin.com/in/mohammed-ali-mulla-17226734b/'">Github</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https:/www.linkedin.com/in/mohammed-ali-mulla-17226734b/'">Live demo</button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="smartphone.jpg" alt="Project2" class="project-img" style="height: 310px; width: 210px;"/>
+                        </div>
+                        <h2 class="experience-sub-title project-title">Smartphone App for Real-Time Driving Behaviour Analysis And Feedback<br/><br/><br/></h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https:/www.linkedin.com/in/mohammed-ali-mulla-17226734b/'">Github</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https://127.0.0.1:5500/livedemo.html'">Live demo</button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="autonoms.jpg" alt="Project3" class="project-img"/>
+                        </div>
+                        <h2 class="experience-sub-title project-title">Digital Twin For Autonomous Vehicle Monitoring And Predictive Analytics<br/><br/><br/><br/></h2>
+                        <div class="btn-container">
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https:/www.linkedin.com/in/mohammed-ali-mulla-17226734b/'">Github</button>
+                            <button class="btn btn-color-2 project-btn" onclick="location.href='https:/www.linkedin.com/in/mohammed-ali-mulla-17226734b/'">Live demo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="arrow.webp" alt="Arrow" class="icon arrow" onclick="location.href='#contact'"/>
+
+            </section>
+            <section id="contact">
+                <p class="section__text__p1">Get in Touch</p>
+                <h1 class="title">Contact Me</h1>
+              
+                <div class="contact-wrapper">
+                  <!-- Left Side: Contact Info -->
+                  <div class="contact-info-upper-container">
+                    <div class="contact-info-container">
+                      <img src="email.png" alt="Email Icon" class="icon contact-icon img-size" />
+                      <p><a href="mailto:mullamohammedali99@gmail.com">mullamohammedali99@gmail.com</a></p>
+                    </div>
+                    <div class="contact-info-container">
+                      <img src="Linkdin1.webp" alt="LinkedIn Icon" class="icon contact-icon" />
+                      <p><a href="https://www.linkedin.com/in/mohammed-ali-mulla-17226734b/">LinkedIn</a></p>
+                    </div>
+                  </div>
+              
+                  <!-- Right Side: Contact Form -->
+                  
+                  <form id="contactForm" class="contact-form">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Message From Portfolio!">
+                  
+                    <h2>Send a Message</h2>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                  
+                    <button type="submit" class="send-btn">
+                      <div class="circle">
+                        <i class="fa-solid fa-paper-plane plane-icon hide"></i>
+                      </div>
+                      Send
+                    </button>
+                  </form>
+                  
+                  </div>
+                
+              </section>
+              
+              
+        <footer>
+            <nav>
+                <div class="nav-links-container">
+                    <ul class ="nav-links">
+                        <li><a href="#profile">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <p>Copyright &#169; 2025 Mohammed Ali.All Rights Reserved.</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+    </html>
+
+    <script>
+        function toggleMenu(){
+    const menu =document.querySelector(".menu-links");
+    const icon =document.querySelector(".hamburger-icon");
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
+}
+
+
+window.onload = function() {
+    // Remove the hash from the URL
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname);
+    }
+  
+    // Scroll to the top of the page after removing the hash
+    window.scrollTo(0, 0);
+  };
+
+  var typed = new Typed(".typing", {
+    strings: ["Web Developer", "App Developer" , "AI/ML Enthusiast"],
+    typeSpeed: 100, 
+    backSpeed: 60, 
+    loop: true 
+});
+
+
+// const form = document.getElementById('contactForm');
+
+//   form.addEventListener('submit', function (e) {
+//     e.preventDefault(); // Prevent default form submission
+
+//     const formData = new FormData(form);
+
+//     fetch(form.action, {
+//       method: 'POST',
+//       body: formData,
+//     })
+//     .then(response => {
+//       if (response.ok) {
+//         alert('Message sent successfully!');
+//         form.reset(); // Clear form
+//       } else {
+//         alert('Something went wrong. Please try again!');
+//       }
+//     })
+//     .catch(error => {
+//       console.error('Error:', error);
+//       alert('Error sending message.');
+//     });
+//   });
+
+  // conatct form button script
+
+const form = document.getElementById("contactForm");
+const sendBtn = document.querySelector(".send-btn");
+const planePath = sendBtn.querySelector(".circle");
+const planeIcon = sendBtn.querySelector(".plane-icon");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); // VERY IMPORTANT!
+
+  // Start animation
+  planePath.classList.add("rotateCircle");
+  planeIcon.classList.remove("hide");
+
+  const formData = new FormData(form);
+
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/mullamohammedali99@gmail.com", {
+      method: "POST",
+      body: formData
+    });
+
+    if (res.ok) {
+      setTimeout(() => {
+        planeIcon.classList.add("hide");
+        planePath.classList.remove("rotateCircle");
+      }, 2750);
+
+      setTimeout(() => {
+        sendBtn.classList.add("checked");
+        sendBtn.innerHTML = "SENT";
+      }, 3000);
+
+      setTimeout(() => {
+        sendBtn.innerHTML = `
+          <div class="circle">
+            <i class="fa-solid fa-paper-plane plane-icon hide"></i>
+          </div>
+          Send
+        `;
+        sendBtn.classList.remove("checked");
+        form.reset(); // Clear form
+      }, 4000);
+    } else {
+      alert("Error sending message.");
+    }
+  } catch (err) {
+    alert("Error occurred. Try again.");
+  }
+});
+
+    </script>

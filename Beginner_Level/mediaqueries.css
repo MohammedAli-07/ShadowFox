@@ -1,0 +1,163 @@
+@media screen and (max-width: 1400px) {
+    #profile{
+        height: 83vh;
+        margin-bottom: 6rem;
+    }
+    .about-conatiners {
+       flex-wrap: flex;
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    #desktop-nav{
+        display: none;
+
+    }
+    #hamburger-nav{
+        display: flex;
+    }
+
+    #experience, 
+    .experience-details-container{
+        margin-top: 2rem;
+    }
+
+    #profile,
+    .section-container{
+        display: block;
+    }
+
+    .arrow{
+        display: none;
+    }
+
+    section,
+    .section-container{
+        height: fit-content;
+    }
+
+    section{
+       margin: 0 5%;
+    }
+
+    .section__pic-container{
+        width: 275px;
+        height: 275px;
+        margin: 0 auto 2rem;
+    }
+
+    .about-containers{
+        margin-top: 0;
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+    #contact,
+    footer{
+        height: 40vh;
+    }
+
+    #profile{
+        height:83vh;
+        margin-bottom: 0;
+    }
+
+    article{
+        font-size: 1rem;
+
+    }
+
+    footer nav{
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+
+    .about-containers,
+    .contact-info-upper-container,
+    .btn-container{
+        flex-wrap: wrap;
+    }
+
+    .contact-info-container{
+        margin: 0;
+    }
+
+    .contact-info-conatainer p,
+    .nav-links li a{
+        font-size: 1rem;
+    }
+
+    .experience-sub-title{
+        font-size: 1.25rem;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .section__pic-container{
+        width: auto;
+        height: 46vw;
+        justify-content: center;
+    }
+
+    .section__text__p2{
+        font-size: 1.25rem;
+    }
+
+    .title{
+        font-size: 2rem;
+    }
+
+    .text-container{
+        text-align:justify;
+    }
+}
+/*My changes*/
+/* Default padding for sections */
+#home, #about, #experience, #projects {
+    padding-top: 120px; /* Large padding for larger screens */
+}
+#contact{
+    padding-top: 300px;
+    
+}
+
+/* Adjust padding for tablets (width less than 1400px) */
+@media screen and (max-width: 1400px) {
+    #home, #about, #experience, #projects, #contact {
+        padding-top: 80px; /* Adjust this value for mid-size screens */
+    }
+}
+
+/* For screens smaller than 1200px, mobile view adjustments */
+@media screen and (max-width: 1200px) {
+    #home, #about, #experience, #projects, #contact {
+        padding-top: 60px; /* Adjust for tablets and smaller screens */
+    }
+}
+
+/* For small screens (width less than 768px), reduce padding further */
+@media screen and (max-width: 768px) {
+    #home, #about, #experience, #projects, #contact {
+        padding-top: 40px; /* Reduce padding for small devices */
+    }
+
+}
+
+/* Further reduce padding for very small screens (below 480px) */
+@media screen and (max-width: 480px) {
+     #experience, #projects, #contact {
+        padding-top: 20px; /* Further reduce padding for small screens */
+    }
+    #home, #about{
+        padding-top: 10px;
+    }
+}
